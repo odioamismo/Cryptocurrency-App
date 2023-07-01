@@ -10,7 +10,6 @@ root.render(
     <Routes>
         <Route index element={<Home/>}></Route>
         <Route path="/:id" element={<CoinInformation/>}></Route>
-        <Route></Route>
     </Routes>
 </BrowserRouter>
 );
