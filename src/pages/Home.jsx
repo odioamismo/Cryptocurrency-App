@@ -4,10 +4,10 @@ import {Link} from "react-router-dom";
 
 const Home = () => {
 
-const store = homeStore()
+    const store = homeStore()
 
     useEffect(() => {
-    store.fetchCoins()
+        store.fetchCoins()
     }, [])
 
     return (
@@ -17,7 +17,7 @@ const store = homeStore()
                 return (
                     <div key={coin.id}>
                         <Link to={`/${coin.id}`}>
-                        {coin.name}
+                            {coin.name}
                         </Link>
                     </div>
                 )
