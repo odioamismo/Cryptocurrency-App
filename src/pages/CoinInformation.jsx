@@ -62,8 +62,14 @@ const CoinInformation = () => {
         store.fetchData(params.id)
     },[])
 
+    if (!store.data) return <></>
+
     return (
         <div>
+            <header>
+                <img src={store.data.image.large} />
+                <h2>{store.data.name} ({store.data.symbol})</h2>
+            </header>
             <AreaChart
                 width={500}
                 height={400}
