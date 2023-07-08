@@ -67,7 +67,7 @@ const CoinInformation = () => {
             <AreaChart
                 width={500}
                 height={400}
-                data={data}
+                data={store.rechData}
                 margin={{
                     top: 10,
                     right: 30,
@@ -76,10 +76,10 @@ const CoinInformation = () => {
                 }}
             >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
+                <XAxis dataKey="Date" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+                <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
             </AreaChart>
         </div>
     );
