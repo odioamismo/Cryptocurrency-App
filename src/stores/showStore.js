@@ -5,15 +5,20 @@ const showStore = create((set) => ({
     data: null,
 
     fetchData: (id) => {
-        const marketChartUrl = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=28`;
+        const rechartsUrl = `https://api.coingecko.com/api/v3/coins/${id}/market_chart?vs_currency=usd&days=28`;
         const detailsUrl = `https://api.coingecko.com/api/v3/coins/${id}?localization=false&market_data=true`;
 
-        fetch(marketChartUrl)
-            .then((response) => response.json())
+        fetch(rechartsUrl)
+            .then((response) => {
+                if (!response.ok) {
+                    console.error('Error while fetching market_chart');
+                }
+                return response.json();
+            })
             .then((rechRes) => {
                 const rechData = rechRes.prices.map((price) => {
                     const [timestamp, prc] = price;
-                    const date = new Date(timestamp).toLocaleDateString("en-us");
+                    const date = new Date(timestamp).toLocaleDateString('en-us');
                     return {
                         Date: date,
                         Price: prc,
@@ -22,16 +27,21 @@ const showStore = create((set) => ({
                 set({ rechData });
             })
             .catch((error) => {
-                console.error('Error while fetching market_chart:', error);
+                console.error(error);
             });
 
         fetch(detailsUrl)
-            .then((response) => response.json())
+            .then((response) => {
+                if (!response.ok) {
+                    console.error('Error while fetching coin data');
+                }
+                return response.json();
+            })
             .then((dataRes) => {
                 set({ data: dataRes });
             })
             .catch((error) => {
-                console.error('Error while fetching coin data:', error);
+                console.error(error);
             });
     },
 }));
