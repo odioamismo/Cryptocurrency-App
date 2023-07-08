@@ -9,6 +9,7 @@ import {
     CartesianGrid,
     Tooltip
 } from "recharts";
+import Header from "../components/Header";
 
 const data = [
     {
@@ -66,6 +67,7 @@ const CoinInformation = () => {
 
     return (
         <div>
+            <Header back/>
             <header>
                 <img src={store.data.image.large} />
                 <h2>{store.data.name} ({store.data.symbol})</h2>
@@ -101,7 +103,7 @@ const CoinInformation = () => {
             </div>
             <div>
                 <h4>Circulating supply</h4>
-                <span>${store.data.market_data.circulating_supply}</span>
+                <span>${store.data.market_data.circulating_supply.toFixed(2)}</span>
             </div>
             <div>
                 <h4>Current price</h4>
