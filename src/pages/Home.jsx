@@ -17,13 +17,13 @@ const Home = () => {
             <Header/>
             <header className="home-search">
                 <div className="width">
-                    <h2>Search for a crypto:</h2>
+                    <h2>Search for a crypto</h2>
                     <input type="text" value={store.query} onChange={store.setQuery}/>
                 </div>
             </header>
             <div className="home-cryptos">
                 <div className="width">
-                <h2>Trending cryptocurrencies:</h2>
+                <h2>Trending cryptocurrencies</h2>
                     <div className="home-crypto-list">
             {store.coins.map(coin => {
                 return <CryptoList key={coin.id} coin={coin}/>
