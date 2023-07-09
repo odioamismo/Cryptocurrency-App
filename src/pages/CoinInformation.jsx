@@ -7,7 +7,7 @@ import {
     XAxis,
     YAxis,
     CartesianGrid,
-    Tooltip
+    Tooltip, ResponsiveContainer
 } from "recharts";
 import Header from "../components/Header";
 const CoinInformation = () => {
@@ -27,23 +27,27 @@ const CoinInformation = () => {
                 <img src={store.data.image.large} />
                 <h2>{store.data.name} ({store.data.symbol})</h2>
             </header>
-            <AreaChart
-                width={500}
-                height={400}
-                data={store.rechData}
-                margin={{
-                    top: 10,
-                    right: 30,
-                    left: 0,
-                    bottom: 0
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="Date" />
-                <YAxis />
-                <Tooltip />
-                <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
-            </AreaChart>
+            <div className="width">
+                <div className="show-rechart">
+                <ResponsiveContainer width="100%" height="100%">
+                    <AreaChart
+                        data={store.rechData}
+                        margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="Date" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey="Price" stroke="#8884d8" fill="#8884d8" />
+                    </AreaChart>
+                </ResponsiveContainer>
+                </div>
+            </div>
             <div>
                 <h4>Market capitalization ranking</h4>
                 <span>{store.data.market_cap_rank}</span>
