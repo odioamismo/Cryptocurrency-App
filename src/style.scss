@@ -10,6 +10,10 @@ body {
 font-family: Poppins, sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .width {
   max-width: 600px;
   margin: 0 auto;
@@ -23,7 +27,6 @@ font-family: Poppins, sans-serif;
   position: sticky;
   top: 0;
   z-index: 100;
-
   .width {
     position: relative;
   }
@@ -32,18 +35,52 @@ font-family: Poppins, sans-serif;
     text-align: center;
     text-transform: uppercase;
     color: white;
-    font-size: 24px;
+    font-size: 26px;
     letter-spacing: 1px;
   }
     a {
       color: white;
       text-decoration: none;
     }
-  }
+}
 
-  .material-symbols-outlined {
+.material-symbols-outlined {
     position: absolute;
     top: 50%;
     left: -50px;
     margin-top: -12px;
+}
+
+input[type="text"] {
+  appearance: none;
+  border: none;
+  outline: none;
+  display: block;
+  width: 100%;
+}
+
+.home-search {
+    padding: 45px 0;
+    text-align: center;
+  h2 {
+      font-size: 24px;
+    }
+  input[type="text"] {
+      border: 1px solid #d4d2d2;
+      padding: 0 24px;
+      line-height: 54px;
+      border-radius: 8px;
+      margin-top: 18px;
+    }
+}
+
+.home-cryptos {
+  h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+    text-align: center;
   }
+}
+
+
+
