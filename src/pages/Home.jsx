@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import homeStore from "../stores/homeStore";
 import {Link} from "react-router-dom";
 import Header from "../components/Header";
+import CryptoList from "../components/CryptoList";
 
 const Home = () => {
 
@@ -14,16 +15,20 @@ const Home = () => {
     return (
         <div>
             <Header/>
-            <input type="text" value={store.query} onChange={store.setQuery}/>
+            <header className="home-search">
+                <div className="width">
+                    <h2>Search for a crypto:</h2>
+                    <input type="text" value={store.query} onChange={store.setQuery}/>
+                </div>
+            </header>
+            <div className="home-cryptos">
+                <div className="width">
+                <h2>Trending cryptocurrencies:</h2>
             {store.coins.map(coin => {
-                return (
-                    <div key={coin.id}>
-                        <Link to={`/${coin.id}`}>
-                            {coin.name}
-                        </Link>
-                    </div>
-                )
+                return <CryptoList key={coin.id} coin={coin}/>
             })}
+                </div>
+            </div>
         </div>
     );
 };
