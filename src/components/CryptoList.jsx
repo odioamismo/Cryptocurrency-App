@@ -11,9 +11,12 @@ const CryptoList = ({coin}) => {
                 <span className="home-crypto-name">
                     {coin.name}
                 </span>
-                <span className="home-crypto-price">
-                    <span>{coin.price} BTC</span>
-                </span>
+                {coin.price && (<span className="home-crypto-price">
+                    <span className="home-crypto-price-btc">
+                        <img src="/newlogo_trans_sm.webp" />
+                        {coin.price} BTC
+                    </span>
+                </span>)}
             </Link>
         </div>
     );
