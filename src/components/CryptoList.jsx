@@ -3,9 +3,17 @@ import {Link} from "react-router-dom";
 
 const CryptoList = ({coin}) => {
     return (
-        <div>
+        <div className="home-crypto">
             <Link to={`/${coin.id}`}>
-                {coin.name}
+                <span className="home-crypto-img">
+                    <img src={coin.image} />
+                </span>
+                <span className="home-crypto-name">
+                    {coin.name}
+                </span>
+                <span className="home-crypto-price">
+                    <span>{coin.price} BTC</span>
+                </span>
             </Link>
         </div>
     );
