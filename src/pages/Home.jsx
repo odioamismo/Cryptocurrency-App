@@ -29,7 +29,7 @@ const Home = () => {
                 return <CryptoList key={coin.id} coin={coin}/>
             })}
                 </div>
-             </div>
+                 </div>
             </div>
         </div>
     );
