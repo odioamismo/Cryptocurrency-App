@@ -24,10 +24,12 @@ const Home = () => {
             <div className="home-cryptos">
                 <div className="width">
                 <h2>Trending cryptocurrencies:</h2>
+                    <div className="home-crypto-list">
             {store.coins.map(coin => {
                 return <CryptoList key={coin.id} coin={coin}/>
             })}
                 </div>
+             </div>
             </div>
         </div>
     );
