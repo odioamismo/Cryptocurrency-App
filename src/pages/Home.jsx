@@ -12,13 +12,15 @@ const Home = () => {
         store.fetchCoins()
     }, [])
 
+    const dynamicLoader = "home-search-input" + (store.loading ? " loading" : "");
+
     return (
         <div>
             <Header/>
             <header className="home-search">
                 <div className="width">
                     <h2>Search for a crypto</h2>
-                    <div className="home-search-input">
+                    <div className={dynamicLoader}>
                         <svg xmlns="http://www.w3.org/2000/svg"
                              width="20"
                              viewBox="0 0 512 512">
