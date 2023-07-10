@@ -5,6 +5,7 @@ const homeStore = create((set) => ({
     coins: [],
     query: "",
     trending: [],
+    loading: false,
 
     fetchCoins: () => {
         fetch("https://api.coingecko.com/api/v3/search/trending")
@@ -38,6 +39,7 @@ const homeStore = create((set) => ({
 
     coinSearcher: debounce (() => {
         const { query, trending } = homeStore.getState();
+        set({loading: true})
         if (query.length > 2) {
             fetch(`https://api.coingecko.com/api/v3/search?query=${query}`)
                 .then((response) => {
@@ -53,13 +55,13 @@ const homeStore = create((set) => ({
                         image: coin.large,
                         id: coin.id
                     }));
-                    set({ coins });
+                    set({ coins, loading: false });
                 })
                 .catch((err) => {
                     console.error(err);
                 });
         } else {
-            set({ coins: trending });
+            set({ coins: trending, loading: false });
         }
     }, 500)
 }));
