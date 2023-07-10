@@ -77,6 +77,24 @@ input[type=text] {
   margin-top: 18px;
 }
 
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.home-search-input {
+  position: relative;
+}
+.home-search-input svg {
+  position: absolute;
+  top: 33%;
+  left: 93%;
+  animation: rotating 2s linear infinite;
+}
+
 .home-cryptos {
   padding-bottom: 30px;
 }
