@@ -95,7 +95,7 @@ input[type="text"] {
     top: 33%;
     left: 93%;
     animation: rotating 2s linear infinite;
-    transition: 0.2s opacity;
+    transition: 0.4s opacity;
     opacity: 0;
   }
   &.loading svg {
