@@ -32,7 +32,7 @@ const Home = () => {
             </header>
             <div className="home-cryptos">
                 <div className="width">
-                <h2>Trending cryptocurrencies</h2>
+                <h2>{ store.searched ? "Searched results" : "Trending cryptocurrencies"}</h2>
                     <div className="home-crypto-list">
             {store.coins.map(coin => {
                 return <CryptoList key={coin.id} coin={coin}/>
