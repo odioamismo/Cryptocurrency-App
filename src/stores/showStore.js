@@ -44,6 +44,9 @@ const showStore = create((set) => ({
                 console.error(error);
             });
     },
+    resetPage: () => {
+        set({rechData: [], data: null})
+    }
 }));
 
 export default showStore;
