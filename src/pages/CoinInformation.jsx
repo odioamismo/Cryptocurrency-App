@@ -16,13 +16,17 @@ const CoinInformation = () => {
 
     useEffect(() => {
         store.fetchData(params.id)
+
+        return () => {
+            store.resetPage();
+        }
     },[])
 
-    if (!store.data) return <></>
 
     return (
         <div>
             <Header back/>
+            {store.data && <>
             <header className="show-header">
                 <img src={store.data.image.large} />
                 <h2>{store.data.name} ({store.data.symbol})</h2>
@@ -78,6 +82,7 @@ const CoinInformation = () => {
                  </div> {" "}
                 </div>
             </div>
+            </>}
         </div>
     );
 };
