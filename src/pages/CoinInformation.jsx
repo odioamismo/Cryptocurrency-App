@@ -28,7 +28,7 @@ const CoinInformation = () => {
             <Header back/>
             {store.data && <>
             <header className="show-header">
-                <img src={store.data.image.large} />
+                <img src={store.data.image.large} alt="large-image"/>
                 <h2>{store.data.name} ({store.data.symbol})</h2>
             </header>
             <div className="width">
