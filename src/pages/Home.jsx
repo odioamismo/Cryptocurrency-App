@@ -9,7 +9,9 @@ const Home = () => {
     const store = homeStore()
 
     useEffect(() => {
-        store.fetchCoins()
+        if (store.trending.length === 0) {
+            store.fetchCoins()
+        }
     }, [])
 
     const dynamicLoader = "home-search-input" + (store.loading ? " loading" : "");
