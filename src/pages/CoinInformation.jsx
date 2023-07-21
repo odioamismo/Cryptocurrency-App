@@ -11,6 +11,7 @@ import {
 } from "recharts";
 import Header from "../components/Header";
 const CoinInformation = () => {
+    // This component renders detailed information about a specific cryptocurrency
     const store = showStore()
     const params = useParams()
 
@@ -79,7 +80,7 @@ const CoinInformation = () => {
                 <div className="show-details-crypto">
                     <h4>1 year change</h4>
                     <span>{store.data.market_data.price_change_percentage_1y.toFixed(2)}%</span>
-                 </div> {" "}
+                 </div>
                 </div>
             </div>
             </>}
