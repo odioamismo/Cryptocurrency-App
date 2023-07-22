@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import CryptoList from "../components/CryptoList";
 
 const Home = () => {
+    // This component renders the home page of the application
 
     const store = homeStore()
 

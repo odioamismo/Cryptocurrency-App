@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-const CryptoList = ({coin}) => {
+const CryptoList = ({coin}) => { // The "coin" prop is in Home.jsx
+    // This component renders a single cryptocurrency item in the home page list
     return (
         <div className="home-crypto">
             <Link to={`/${coin.id}`}>
